@@ -41,13 +41,13 @@ return;
 }
 
 // Feedback validation (minimum 10 words)
-let words = feedback.split(/\s+/).length;
+let words = feedback.split(/\s+/).filter(Boolean).length;
 if(words < 10){
 alert("Feedback must contain at least 10 words");
-return;
+return false;
 }
 
 // Success
 alert("Feedback Submitted Successfully!");
-
+return true;
 }
